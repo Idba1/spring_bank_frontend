@@ -1,76 +1,97 @@
-import { useContext } from "react"
-import { AuthContext } from "../Provider/AuthProvider"
-import { Link } from "react-router-dom"
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
+import { Link } from "react-router-dom";
+import { FaSearch, FaHeadphones } from "react-icons/fa";
+import { HiOutlineMenu, HiX } from "react-icons/hi";
+import { useState } from "react";
 
 const Navbar = () => {
-    const { user, logOut } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext);
+    const [isOpen, setIsOpen] = useState(false);
 
-    console.log(user);
     return (
-        <div className='navbar bg-base-100 shadow-sm container px-4 mx-auto'>
-            <div className='flex-1'>
-                <Link to='/' className='flex gap-2 items-center'>
-                    <img className='w-auto h-7' src='./logo.png' alt='solo-sphere logo' />
-                    <span className='font-bold'>BistroBoss</span>
-                </Link>
-            </div>
-            <div className='flex-none'>
-                <ul className='menu menu-horizontal px-1'>
-                    <Link to={"/"}>
-                        <div>Home</div>
-                    </Link>
-                    {
-                        !user &&
-                        <Link to={"/login"} >
-                            <div>Login</div>
-                        </Link>}
-
-                </ul>
-
-                {
-                    user &&
-                    <div className='dropdown dropdown-end z-50'>
-                        <div
-                            tabIndex={0}
-                            role='button'
-                            className='btn btn-ghost btn-circle avatar'
-                        >
-                            <div className='w-10 rounded-full' title={user?.displayName}>
-                                <img
-                                    referrerPolicy='no-referrer'
-                                    alt='User Profile Photo'
-                                    src={user?.photoURL}
-                                />
-                            </div>
+        <div className='bg-white shadow-md w-full'>
+            <div className='container mx-auto px-4 py-2'>
+                {/* Top Row */}
+                <div className='hidden md:flex justify-between items-center mb-2'>
+                    <div className='flex items-center gap-4'>
+                        <div className='bg-red-600 text-white px-3 py-1 rounded-full text-sm cursor-pointer'>
+                            🔍 Looking: <span className='font-semibold'>Personal ▼</span>
                         </div>
-                        <ul
-                            tabIndex={0}
-                            className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
-                        >
-                            <li>
-                                <div className='justify-between'>Add Job</div>
-                            </li>
-                            <li>
-                                <div>My Posted Jobs</div>
-                            </li>
-                            <li>
-                                <div>My Bids</div>
-                            </li>
-                            <li>
-                                <div>Bid Requests</div>
-                            </li>
-                            <li className='mt-2'>
-                                <button
-                                    onClick={logOut}
-                                    className='bg-gray-200 block text-center'>Logout</button>
-                            </li>
-                        </ul>
+                        <div className='flex gap-2'>
+                            <Link to='/login' className='text-gray-600 hover:text-red-600'>Login</Link>
+                            <Link to='/register' className='text-gray-600 hover:text-red-600'>Register</Link>
+                        </div>
+                        <div className='text-gray-600 flex items-center gap-1'>
+                            ✉ info@example.com
+                        </div>
                     </div>
-                }
+                    <div className='flex items-center gap-4'>
+                        <div className='flex gap-2'>
+                            <Link to='/career' className='text-gray-600 hover:text-red-600'>Careers</Link>
+                            <Link to='/faqs' className='text-gray-600 hover:text-red-600'>FAQs</Link>
+                            <Link to='/debit-card' className='text-gray-600 hover:text-red-600'>Debit Card</Link>
+                            <Link to='/apply' className='text-gray-600 hover:text-red-600'>Apply Now</Link>
+                        </div>
+                    </div>
+                </div>
 
+                {/* Bottom Row */}
+                <div className='flex justify-between items-center'>
+                    {/* Logo */}
+                    <Link to='/' className='flex items-center gap-2'>
+                        <img className='w-auto h-8' src='/logo.png' alt='Flexibank Logo' />
+                        <span className='font-bold text-lg'>Flexi<span className='text-red-600'>bank</span></span>
+                    </Link>
+
+                    {/* Desktop Navigation */}
+                    <div className='hidden md:flex items-center gap-4'>
+                        <nav className='flex gap-4 text-gray-600'>
+                            <Link to='/'>Home</Link>
+                            <Link to='/services'>Services</Link>
+                            <Link to='/about'>About</Link>
+                            <Link to='/news'>News</Link>
+                            <Link to='/apply'>Apply Now</Link>
+                            <Link to='/contact'>Get In Touch</Link>
+                        </nav>
+                        <div className='flex items-center gap-2'>
+                            <FaSearch className='text-gray-600 cursor-pointer' />
+                            <FaHeadphones className='text-gray-600 cursor-pointer' />
+                        </div>
+                        <Link to='/new-account' className='bg-red-600 text-white px-4 py-2 rounded-lg'>
+                            ➜ New Account
+                        </Link>
+                    </div>
+
+                    {/* Mobile Menu Button */}
+                    <div className='md:hidden'>
+                        <button onClick={() => setIsOpen(!isOpen)} className='text-gray-600 text-2xl'>
+                            {isOpen ? <HiX /> : <HiOutlineMenu />}
+                        </button>
+                    </div>
+                </div>
+
+                {/* Mobile Navigation */}
+                {isOpen && (
+                    <div className='md:hidden flex flex-col items-center mt-4 space-y-4 bg-white shadow-md p-4'>
+                        <Link to='/'>Home</Link>
+                        <Link to='/services'>Services</Link>
+                        <Link to='/about'>About</Link>
+                        <Link to='/news'>News</Link>
+                        <Link to='/apply'>Apply Now</Link>
+                        <Link to='/contact'>Get In Touch</Link>
+                        <div className='flex items-center gap-2'>
+                            <FaSearch className='text-gray-600 cursor-pointer' />
+                            <FaHeadphones className='text-gray-600 cursor-pointer' />
+                        </div>
+                        <Link to='/new-account' className='bg-red-600 text-white px-4 py-2 rounded-lg'>
+                            ➜ New Account
+                        </Link>
+                    </div>
+                )}
             </div>
-        </div >
-    )
-}
+        </div>
+    );
+};
 
-export default Navbar
+export default Navbar;
