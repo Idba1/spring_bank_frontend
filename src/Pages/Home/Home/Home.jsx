@@ -6,6 +6,7 @@ import Blog from '../Blog/Blog'
 import FAQSection from '../../FAQSection/FAQSection'
 import LockerFacility from '../LockerFacility/LockerFacility'
 import LoanCalculator from '../LoanCalculator/LoanCalculator'
+import CreditCardSection from '../CreditCardSection/CreditCardSection'
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <Needs />
             <Slider />
             <LoanCalculator />
+            <CreditCardSection />
             <LockerFacility />
             <FAQSection />
             <Blog />
