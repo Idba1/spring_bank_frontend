@@ -31,7 +31,7 @@ const blogPosts = [
     },
 ];
 
-const BlogSection = () => {
+const Blog = () => {
     return (
         <div className="relative w-full max-w-6xl mx-auto my-10">
             <h3 className="text-red-600 font-bold text-sm uppercase">Blog Posts</h3>
@@ -91,4 +91,4 @@ const BlogSection = () => {
     );
 };
 
-export default BlogSection;
+export default Blog;
