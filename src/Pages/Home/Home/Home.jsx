@@ -5,6 +5,7 @@ import Slider from '../Slider/Slider'
 import Blog from '../Blog/Blog'
 import FAQSection from '../../FAQSection/FAQSection'
 import LockerFacility from '../LockerFacility/LockerFacility'
+import LoanCalculator from '../LoanCalculator/LoanCalculator'
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <Banner />
             <Needs />
             <Slider />
+            <LoanCalculator />
             <LockerFacility />
             <FAQSection />
             <Blog />
