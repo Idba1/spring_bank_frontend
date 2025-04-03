@@ -4,6 +4,7 @@ import Needs from '../Needs/Needs'
 import Slider from '../Slider/Slider'
 import Blog from '../Blog/Blog'
 import FAQSection from '../../FAQSection/FAQSection'
+import LockerFacility from '../LockerFacility/LockerFacility'
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Banner />
             <Needs />
             <Slider />
+            <LockerFacility />
             <FAQSection />
             <Blog />
         </div>
