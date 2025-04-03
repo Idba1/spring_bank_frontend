@@ -52,7 +52,7 @@ const Navbar = () => {
                             <Link to='/about'>About</Link>
                             <Link to='/news'>News</Link>
                             <Link to='/apply'>Apply Now</Link>
-                            <Link to='/contact'>Get In Touch</Link>
+                            <Link to='/get-in-touch'>Get In Touch</Link>
                         </nav>
                         <div className='flex items-center gap-2'>
                             <FaSearch className='text-gray-600 cursor-pointer' />
@@ -79,7 +79,7 @@ const Navbar = () => {
                         <Link to='/about'>About</Link>
                         <Link to='/news'>News</Link>
                         <Link to='/apply'>Apply Now</Link>
-                        <Link to='/contact'>Get In Touch</Link>
+                        <Link to='/get-in-touch'>Get In Touch</Link>
                         <div className='flex items-center gap-2'>
                             <FaSearch className='text-gray-600 cursor-pointer' />
                             <FaHeadphones className='text-gray-600 cursor-pointer' />

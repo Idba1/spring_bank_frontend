@@ -4,6 +4,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Registration from "../Pages/Authentication/Register";
 import Login from "../Pages/Authentication/LogIn";
 import Home from "../Pages/Home/Home/Home";
+import GetInTouch from "../Pages/GetInTouch/GetInTouch";
 
 const Routes = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const Routes = createBrowserRouter([
                 {
                     path: '/login',
                     element: <Login></Login>,
+                },
+                {
+                    path: '/get-in-touch',
+                    element: <GetInTouch></GetInTouch>,
                 },
             ]
     }
