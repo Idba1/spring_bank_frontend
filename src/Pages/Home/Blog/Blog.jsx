@@ -4,102 +4,91 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const sliderData = [
+const blogPosts = [
     {
-        title: "Multi Currency a/c",
-        description: "Duty through weakness will which is same as saying through...",
+        title: "How to Improves Your Credit Score Tips and Tricks",
+        description: "By Admin | 17 Dec, 2024 | 4 months ago",
         image: "https://i.ibb.co.com/7J0w5r2t/growth-1-1.jpg",
-        icon: "💱",
+        category: "ACCOUNT",
     },
     {
-        title: "Mutual Funds",
-        description: "Choice is when nothing prevents our being able to do...",
+        title: "Your Credit Score Tips and Tricks How to Improves",
+        description: "By Admin | 17 Dec, 2024 | 4 months ago",
         image: "https://i.ibb.co.com/7J0w5r2t/growth-1-1.jpg",
-        icon: "💰",
+        category: "ACCOUNT",
     },
     {
-        title: "Trade FX",
-        description: "Perfectly simple easy distinguish to the claims of duty...",
+        title: "Growth Strategies for Your Small Business",
+        description: "By Admin | 14 Sep, 2024 | 7 months ago",
         image: "https://i.ibb.co.com/7J0w5r2t/growth-1-1.jpg",
-        icon: "📈",
+        category: "FINANCIAL PLANNING",
     },
     {
-        title: "Multi Currency a/c",
-        description: "Duty through weakness will which is same as saying through...",
+        title: "How to Improve Your Credit Score Tips and Tricks",
+        description: "By Admin | 14 Sep, 2024 | 7 months ago",
         image: "https://i.ibb.co.com/7J0w5r2t/growth-1-1.jpg",
-        icon: "💱",
-    },
-    {
-        title: "Mutual Funds",
-        description: "Choice is when nothing prevents our being able to do...",
-        image: "https://i.ibb.co.com/7J0w5r2t/growth-1-1.jpg",
-        icon: "💰",
-    },
-    {
-        title: "Trade FX",
-        description: "Perfectly simple easy distinguish to the claims of duty...",
-        image: "https://i.ibb.co.com/7J0w5r2t/growth-1-1.jpg",
-        icon: "📈",
+        category: "FINANCIAL PLANNING",
     },
 ];
 
-const Blog = () => {
+const BlogSection = () => {
     return (
-        <div className="relative w-full max-w-4xl mx-auto my-10">
-            <h3 className="text-red-600 font-bold text-sm uppercase">Blog Post</h3>
-            <h2 className="text-3xl font-bold mb-6">Latest from Blog Post</h2>
+        <div className="relative w-full max-w-6xl mx-auto my-10">
+            <h3 className="text-red-600 font-bold text-sm uppercase">Blog Posts</h3>
+            <h2 className="text-3xl font-bold mb-6">Latest from Blog</h2>
 
-            <Swiper
-                modules={[Navigation]}
-                spaceBetween={30}
-                slidesPerView={1}
-                navigation={{
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                }}
-                breakpoints={{
-                    640: { slidesPerView: 1 },
-                    1024: { slidesPerView: 3 },
-                }}
-            >
-                {sliderData.map((item, index) => (
-                    <SwiperSlide key={index} className="group">
-                        <div className="bg-white shadow-lg p-5 rounded-md relative">
-                          
-                            <div className="mt-3 relative">
-                                <img
-                                    src={item.image}
-                                    alt={item.title}
-                                    className="rounded-md w-full h-auto"
-                                />
-                                <span className="absolute top-1/2 right-4 bg-white p-2 shadow-md rounded-full text-red-500 text-xl">
-                                    {item.icon}
-                                </span>
+            <div className="flex items-center justify-between">
+                <button className="swiper-button-prev p-3 bg-gray-200 rounded-full shadow">
+                    <ChevronLeft />
+                </button>
+                
+                <Swiper
+                    modules={[Navigation]}
+                    spaceBetween={30}
+                    slidesPerView={1}
+                    navigation={{
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    }}
+                    breakpoints={{
+                        640: { slidesPerView: 1 },
+                        1024: { slidesPerView: 3 },
+                    }}
+                    className="w-full"
+                >
+                    {blogPosts.map((post, index) => (
+                        <SwiperSlide key={index}>
+                            <div className="bg-white shadow-lg rounded-md p-4">
+                                <div className="relative mb-4">
+                                    <img
+                                        src={post.image}
+                                        alt={post.title}
+                                        className="rounded-md w-full h-auto"
+                                    />
+                                    <span className="absolute top-4 left-4 bg-red-500 text-white text-xs uppercase px-2 py-1 rounded">
+                                        {post.category}
+                                    </span>
+                                </div>
+                                <h3 className="font-semibold text-lg mb-2">{post.title}</h3>
+                                <p className="text-gray-500 text-sm">{post.description}</p>
+                                <a href="#" className="text-red-500 font-medium mt-2 block">
+                                    → Read More
+                                </a>
                             </div>
-                            <h3 className="font-semibold text-lg">{item.title}</h3>
-                            <p className="text-gray-600">{item.description}</p>
-                            <p className="text-gray-600">{item.description}</p>
-                            <a href="#" className="text-red-500 mt-3 block font-medium">
-                                → Read More
-                            </a>
-                        </div>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
 
-            {/* Navigation Buttons */}
-            <button className="swiper-button-prev absolute -left-20 top-2/3 transform -translate-y-1/2 p-2  rounded-full shadow-md">
-                <ChevronLeft />
-            </button>
-            <button className="swiper-button-next absolute -right-20 top-2/3 transform -translate-y-1/2 p-2  rounded-full shadow-md">
-                <ChevronRight />
-            </button>
+                <button className="swiper-button-next p-3 bg-gray-200 rounded-full shadow">
+                    <ChevronRight />
+                </button>
+            </div>
 
-            <p className="text-center mt-5 text-gray-700">
-                <strong>Find the Perfect FD Option for Your Needs.</strong>
+            <p className="text-center mt-6 text-gray-700">
+                <strong>Explore the best financial tips and strategies tailored for your needs.</strong>
             </p>
         </div>
     );
 };
 
-export default Blog;
+export default BlogSection;
