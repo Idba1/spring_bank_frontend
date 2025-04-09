@@ -14,6 +14,7 @@ import About from "../Pages/About/About/About";
 import News from "../Pages/News/News/News";
 import ApplyNow from "../Pages/ApplyNow/ApplyNow/ApplyNow";
 import DebitCard from "../Pages/DebitCard/DebitCard/DebitCard";
+import AdminDashboard from "../Pages/Admin/AdminDashboard/AdminDashboard";
 
 const Routes = createBrowserRouter([
     {
@@ -75,6 +76,16 @@ const Routes = createBrowserRouter([
                     element: <DebitCard></DebitCard>,
                 },
             ]
+    },
+    {
+        path: 'admin-dashboard',
+        element: <AdminDashboard></AdminDashboard>,
+        children: [
+            {
+                path: 'admin-dashboard',
+                element: <AdminDashboard></AdminDashboard>
+            },
+        ]
     }
 ]);
 
