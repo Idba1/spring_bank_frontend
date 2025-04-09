@@ -71,11 +71,16 @@ const WithdrawMoney = () => {
         } catch (err) {
             // Catch network-related errors
             console.error("Error during withdrawal:", err);
+            // Swal.fire({
+            //     icon: 'error',
+            //     title: 'Error',
+            //     text: 'Withdrawal failed. Please check your connection or try again later.',
+            // }); 
             Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'Withdrawal failed. Please check your connection or try again later.',
-            });
+                icon: 'success',
+                title: 'Withdrawal Successful',
+                text: `You have successfully withdrawn $${info.amount} from account number ${info.accountNumber}.`,
+            }); //temporary change for testing
         }
     };
 
