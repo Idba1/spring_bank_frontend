@@ -20,7 +20,7 @@ const Navbar = () => {
                         </div>
                         <div className='flex gap-2'>
                             <Link to='/login' className='text-gray-600 hover:text-red-600'>Login</Link>
-                            <Link to='/register' className='text-gray-600 hover:text-red-600'>Register</Link>
+                            <Link to='/registration' className='text-gray-600 hover:text-red-600'>Register</Link>
                         </div>
                         <div className='text-gray-600 flex items-center gap-1'>
                             ✉ info@example.com
@@ -28,7 +28,7 @@ const Navbar = () => {
                     </div>
                     <div className='flex items-center gap-4'>
                         <div className='flex gap-2'>
-                            <Link to='/career' className='text-gray-600 hover:text-red-600'>Careers</Link>
+                            {/* <Link to='/career' className='text-gray-600 hover:text-red-600'>Careers</Link> */}
                             <Link to='/faqs' className='text-gray-600 hover:text-red-600'>FAQs</Link>
                             <Link to='/debit-card' className='text-gray-600 hover:text-red-600'>Debit Card</Link>
                             <Link to='/apply' className='text-gray-600 hover:text-red-600'>Apply Now</Link>
