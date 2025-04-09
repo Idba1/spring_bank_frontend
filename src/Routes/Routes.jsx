@@ -9,6 +9,11 @@ import FAQSection from "../Pages/FAQSection/FAQSection";
 import CustomerDetails from "../Pages/Customer/CustomerDetails/CustomerDetails";
 import CustomerInfo from "../Pages/Customer/CustomerDetails/CustomerInfo";
 import TransactionHistory from "../Pages/Customer/TransactionHistory/TransactionHistory";
+import Services from "../Pages/Services/Services/Services";
+import About from "../Pages/About/About/About";
+import News from "../Pages/News/News/News";
+import ApplyNow from "../Pages/ApplyNow/ApplyNow/ApplyNow";
+import DebitCard from "../Pages/DebitCard/DebitCard/DebitCard";
 
 const Routes = createBrowserRouter([
     {
@@ -48,6 +53,26 @@ const Routes = createBrowserRouter([
                 {
                     path: '/transaction-history',
                     element: <TransactionHistory></TransactionHistory>,
+                },
+                {
+                    path: '/services',
+                    element: <Services></Services>,
+                },
+                {
+                    path: '/about',
+                    element: <About></About>,
+                },
+                {
+                    path: '/news',
+                    element: <News></News>,
+                },
+                {
+                    path: '/apply',
+                    element: <ApplyNow></ApplyNow>,
+                },
+                {
+                    path: '/debit-card',
+                    element: <DebitCard></DebitCard>,
                 },
             ]
     }
