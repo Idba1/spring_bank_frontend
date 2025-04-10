@@ -14,21 +14,21 @@ const Navbar = () => {
     const navLinks = [
         { name: "Home", path: "/" },
         { name: "Services", path: "/services" },
-        { name: "About", path: "/about" },
         { name: "News", path: "/news" },
         { name: "Apply Now", path: "/apply" },
         { name: "Get In Touch", path: "/get-in-touch" },
+        { name: "About", path: "/about" },
     ];
 
     const linkStyle = (path) =>
         `px-3 py-1 rounded-md transition-colors duration-300 ${
             isActive(path)
                 ? "bg-red-600 text-white"
-                : "text-gray-600 hover:bg-red-700 hover:text-white"
+                : "text-black-600 hover:bg-red-700 hover:text-white"
         }`;
 
     return (
-        <div className="bg-white shadow-md w-full">
+        <div className="bg-white shadow-md w-full font-bold text-black">
             <div className="container mx-auto px-4 py-2">
                 {/* Top Row */}
                 <div className="hidden md:flex justify-between items-center mb-2">
@@ -37,8 +37,8 @@ const Navbar = () => {
                             Looking: <span className="font-semibold">Banking Sheba</span>
                         </div>
                         <div className="flex gap-2">
-                            <Link to="/login" className="text-gray-600 hover:text-red-600">Login</Link>
-                            <Link to="/registration" className="text-gray-600 hover:text-red-600">Register</Link>
+                            <Link to="/login" className="text-black-600 hover:text-red-600">Login</Link>
+                            <Link to="/registration" className="text-black-600 hover:text-red-600">Register</Link>
                         </div>
                         <div className="text-gray-600 flex items-center gap-1">
                             ✉ info@example.com
@@ -46,8 +46,8 @@ const Navbar = () => {
                     </div>
                     <div className="flex items-center gap-4">
                         <div className="flex gap-2">
-                            <Link to="/faqs" className="text-gray-600 hover:text-red-600">FAQs</Link>
-                            <Link to="/debit-card" className="text-gray-600 hover:text-red-600">Debit Card</Link>
+                            <Link to="/faqs" className="text-black-600 hover:text-red-600">FAQs</Link>
+                            <Link to="/debit-card" className="text-black-600 hover:text-red-600">Debit Card</Link>
                         </div>
                     </div>
                 </div>
@@ -72,8 +72,8 @@ const Navbar = () => {
                             ))}
                         </nav>
                         <div className="flex items-center gap-2">
-                            <FaSearch className="text-gray-600 cursor-pointer" />
-                            <FaHeadphones className="text-gray-600 cursor-pointer" />
+                            <FaSearch className="text-black-600 cursor-pointer" />
+                            <FaHeadphones className="text-black-600 cursor-pointer" />
                         </div>
                         <Link to="/new-account" className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">
                             ➜ New Account
@@ -82,7 +82,7 @@ const Navbar = () => {
 
                     {/* Mobile Menu Button */}
                     <div className="md:hidden">
-                        <button onClick={() => setIsOpen(!isOpen)} className="text-gray-600 text-2xl">
+                        <button onClick={() => setIsOpen(!isOpen)} className="text-black-600 text-2xl">
                             {isOpen ? <HiX /> : <HiOutlineMenu />}
                         </button>
                     </div>
@@ -97,8 +97,8 @@ const Navbar = () => {
                             </Link>
                         ))}
                         <div className="flex items-center gap-2">
-                            <FaSearch className="text-gray-600 cursor-pointer" />
-                            <FaHeadphones className="text-gray-600 cursor-pointer" />
+                            <FaSearch className="text-black-600 cursor-pointer" />
+                            <FaHeadphones className="text-black-600 cursor-pointer" />
                         </div>
                         <Link to="/new-account" className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">
                             ➜ New Account
