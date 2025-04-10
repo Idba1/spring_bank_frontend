@@ -31,7 +31,7 @@ const Navbar = () => {
                             {/* <Link to='/career' className='text-gray-600 hover:text-red-600'>Careers</Link> */}
                             <Link to='/faqs' className='text-gray-600 hover:text-red-600'>FAQs</Link>
                             <Link to='/debit-card' className='text-gray-600 hover:text-red-600'>Debit Card</Link>
-                            <Link to='/apply' className='text-gray-600 hover:text-red-600'>Apply Now</Link>
+                            {/* <Link to='/apply' className='text-gray-600 hover:text-red-600'>Apply Now</Link> */}
                         </div>
                     </div>
                 </div>
