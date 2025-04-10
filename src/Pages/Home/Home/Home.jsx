@@ -12,17 +12,19 @@ import StatisticsCard from '../StatisticsCard/StatisticsCard'
 
 const Home = () => {
     return (
-        <div className='container mx-auto'>
+        <div>
             <Banner />
-            <Needs />
-            <Slider />
-            <CustomBankingSection />
-            <StatisticsCard />
-            <LoanCalculator />
-            <CreditCardSection />
-            <LockerFacility />
-            <FAQSection />
-            <Blog />
+            <div className='container mx-auto'>
+                <Needs />
+                <Slider />
+                <CustomBankingSection />
+                <StatisticsCard />
+                <LoanCalculator />
+                <CreditCardSection />
+                <LockerFacility />
+                <FAQSection />
+                <Blog />
+            </div>
         </div>
     )
 }

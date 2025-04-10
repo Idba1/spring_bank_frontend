@@ -38,9 +38,9 @@ const Blog = () => {
             <h2 className="text-3xl font-bold mb-6">Latest from Blog</h2>
 
             <div className="flex items-center justify-between">
-                <button className="swiper-button-prev p-3 bg-gray-200 rounded-full shadow">
+                {/* <button className="swiper-button-prev p-3 bg-gray-200 rounded-full shadow">
                     <ChevronLeft />
-                </button>
+                </button> */}
                 
                 <Swiper
                     modules={[Navigation]}
@@ -79,9 +79,9 @@ const Blog = () => {
                     ))}
                 </Swiper>
 
-                <button className="swiper-button-next p-3 bg-gray-200 rounded-full shadow">
+                {/* <button className="swiper-button-next p-3 bg-gray-200 rounded-full shadow">
                     <ChevronRight />
-                </button>
+                </button> */}
             </div>
 
             <p className="text-center mt-6 text-gray-700">

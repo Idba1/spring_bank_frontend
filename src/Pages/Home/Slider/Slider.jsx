@@ -86,12 +86,12 @@ const Slider = () => {
             </Swiper>
 
             {/* Navigation Buttons */}
-            <button className="swiper-button-prev absolute -left-20 top-2/3 transform -translate-y-1/2 p-2  rounded-full shadow-md">
+            {/* <button className="swiper-button-prev absolute -left-20 top-2/3 transform -translate-y-1/2 p-2  rounded-full shadow-md">
                 <ChevronLeft />
             </button>
             <button className="swiper-button-next absolute -right-20 top-2/3 transform -translate-y-1/2 p-2  rounded-full shadow-md">
                 <ChevronRight />
-            </button>
+            </button> */}
 
             <p className="text-center mt-5 text-gray-700">
                 <strong>Find the Perfect FD Option for Your Needs.</strong>
