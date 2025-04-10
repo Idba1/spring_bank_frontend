@@ -15,6 +15,7 @@ import News from "../Pages/News/News/News";
 import ApplyNow from "../Pages/ApplyNow/ApplyNow/ApplyNow";
 import DebitCard from "../Pages/DebitCard/DebitCard/DebitCard";
 import AdminDashboard from "../Pages/Admin/AdminDashboard/AdminDashboard";
+import CustomerDashboard from "../Pages/Customer/CustomerDashboard/CustomerDashboard.";
 
 const Routes = createBrowserRouter([
     {
@@ -48,7 +49,7 @@ const Routes = createBrowserRouter([
                     element: <FAQSection></FAQSection>,
                 },
                 {
-                    path: '/customer-dashboard',
+                    path: '/dashboard',
                     element: <CustomerDetails></CustomerDetails>,
                 },
                 {
@@ -88,6 +89,16 @@ const Routes = createBrowserRouter([
             {
                 path: 'admin-dashboard',
                 element: <AdminDashboard></AdminDashboard>
+            },
+        ]
+    },
+    {
+        path: 'customer-dashboard',
+        element: <CustomerDashboard></CustomerDashboard>,
+        children: [
+            {
+                path: 'customer-dashboard',
+                element: <CustomerDashboard></CustomerDashboard>
             },
         ]
     }
