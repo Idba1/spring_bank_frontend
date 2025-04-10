@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const CustomerDetails = () => {
     const [accountNumber, setAccountNumber] = useState('');
@@ -29,96 +29,68 @@ const CustomerDetails = () => {
     };
 
     return (
-        <div className="p-6">
+        <div className="p-4 md:p-6">
             {/* Search Box */}
-            <form onSubmit={handleSearch} className="flex justify-center mb-6">
+            <form onSubmit={handleSearch} className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
                 <input
                     type="text"
-                    className="input input-bordered w-72 p-3 mr-4"
+                    className="border border-gray-300 rounded px-4 py-2 w-full sm:w-72"
                     placeholder="Enter Account Number"
                     value={accountNumber}
                     onChange={(e) => setAccountNumber(e.target.value)}
                 />
-                <button className="btn btn-primary" type="submit">Search</button>
+                <button
+                    type="submit"
+                    className="bg-red-600 text-white px-5 py-2 rounded hover:bg-red-700 transition"
+                >
+                    Search
+                </button>
             </form>
 
-            {/* Display Customer Details */}
-            {loading && <div>Loading customer details...</div>}
+            {/* Loading State */}
+            {loading && <div className="text-center text-gray-600">Loading customer details...</div>}
+
+            {/* Customer Details */}
             {!loading && customer && (
-                <div className="overflow-x-auto p-4">
-                    <table className="table w-full">
+                <div className="overflow-x-auto bg-white rounded-lg shadow p-4">
+                    <table className="table-auto w-full text-sm md:text-base">
                         <thead>
-                            <tr>
-                                <th>Field</th>
-                                <th>Details</th>
+                            <tr className="bg-gray-100 text-left text-gray-700">
+                                <th className="p-2 border-b">Field</th>
+                                <th className="p-2 border-b">Details</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Name</td>
-                                <td>{customer.name}</td>
-                            </tr>
-                            <tr>
-                                <td>Account Number</td>
-                                <td>{customer.accountNumber}</td>
-                            </tr>
-                            <tr>
-                                <td>Status</td>
-                                <td>{customer.status || 'N/A'}</td>
-                            </tr>
-                            <tr>
-                                <td>Balance</td>
-                                <td>${customer.balance}</td>
-                            </tr>
-                            <tr>
-                                <td>Email</td>
-                                <td>{customer.email}</td>
-                            </tr>
-                            <tr>
-                                <td>Phone</td>
-                                <td>{customer.phone}</td>
-                            </tr>
-                            <tr>
-                                <td>Father's Name</td>
-                                <td>{customer.fatherName}</td>
-                            </tr>
-                            <tr>
-                                <td>Mother's Name</td>
-                                <td>{customer.motherName}</td>
-                            </tr>
-                            <tr>
-                                <td>NID</td>
-                                <td>{customer.nid}</td>
-                            </tr>
-                            <tr>
-                                <td>Gender</td>
-                                <td>{customer.gender}</td>
-                            </tr>
-                            <tr>
-                                <td>Address</td>
-                                <td>{customer.address}</td>
-                            </tr>
-                            <tr>
-                                <td>Nominee Name</td>
-                                <td>{customer.nomineeName}</td>
-                            </tr>
-                            <tr>
-                                <td>Nominee Address</td>
-                                <td>{customer.nomineeAddress}</td>
-                            </tr>
-                            <tr>
-                                <td>Nationality</td>
-                                <td>{customer.nationality}</td>
-                            </tr>
-                            <tr>
-                                <td>Birth Date</td>
-                                <td>{customer.birth_date || 'N/A'}</td>
-                            </tr>
+                        <tbody className="text-gray-800">
+                            {[
+                                { label: 'Name', value: customer.name },
+                                { label: 'Account Number', value: customer.accountNumber },
+                                { label: 'Status', value: customer.status || 'N/A' },
+                                { label: 'Balance', value: `$${customer.balance}` },
+                                { label: 'Email', value: customer.email },
+                                { label: 'Phone', value: customer.phone },
+                                { label: 'Father\'s Name', value: customer.fatherName },
+                                { label: 'Mother\'s Name', value: customer.motherName },
+                                { label: 'NID', value: customer.nid },
+                                { label: 'Gender', value: customer.gender },
+                                { label: 'Address', value: customer.address },
+                                { label: 'Nominee Name', value: customer.nomineeName },
+                                { label: 'Nominee Address', value: customer.nomineeAddress },
+                                { label: 'Nationality', value: customer.nationality },
+                                { label: 'Birth Date', value: customer.birth_date || 'N/A' },
+                            ].map((row, i) => (
+                                <tr key={i} className={i % 2 === 0 ? 'bg-gray-50' : ''}>
+                                    <td className="p-2 font-medium border-b w-1/3">{row.label}</td>
+                                    <td className="p-2 border-b">{row.value}</td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                 </div>
             )}
-            {!loading && !customer && <div>No customer found with this account number.</div>}
+
+            {!loading && !customer && (
+                <div className="text-center text-gray-500 mt-6">No customer found with this account number.</div>
+            )}
         </div>
     );
 };
